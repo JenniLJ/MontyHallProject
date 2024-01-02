@@ -1,17 +1,15 @@
 import tkinter as tk
-from montyhall import initialize_doors, reveal_goat, final_choice
+from montyhall import initialize_doors, reveal_goat
 
-class MontyHallGameGUI:
+class GameGUI:
     def __init__(self, master):
         self.master = master
         master.title("Monty Hall Game")
 
-        # Initialize game variables
         self.doors = [0, 0, 0]
         self.user_choice = None
         self.remaining_door = None
 
-        # GUI Components
         self.door_choice_label = tk.Label(master, text="Choose a door (1, 2, or 3):")
         self.door_choice_entry = tk.Entry(master)
         self.play_button = tk.Button(master, text="Play", command=self.start_game)
@@ -20,7 +18,6 @@ class MontyHallGameGUI:
         self.switch_button = tk.Button(master, text="Switch", command=self.switch_doors)
         self.stick_button = tk.Button(master, text="Stick", command=self.stick_with_door)
 
-        # Packing GUI Components
         self.door_choice_label.pack()
         self.door_choice_entry.pack()
         self.play_button.pack()
@@ -63,5 +60,5 @@ class MontyHallGameGUI:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    game = MontyHallGameGUI(root)
+    game = GameGUI(root)
     root.mainloop()

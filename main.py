@@ -1,5 +1,5 @@
 import tkinter as tk
-from gui import MontyHallGameGUI 
+from gui import GameGUI 
 from montyhall import final_choice, initialize_doors, reveal_goat, player_choice
 
 def main():
@@ -9,11 +9,10 @@ def main():
     while play_again.lower() in ["yes", "y"]:
         doors = initialize_doors()
         print("There are 3 doors in front of you: Door 1, Door 2, and Door 3.")
-        player_door = player_choice(doors)
+        player_door = player_choice
         goat_door = reveal_goat(doors, player_door)
         print(f"The host reveals a goat behind Door {goat_door + 1}.")
 
-        # Ask if the player wants to switch
         switch = input("Do you want to switch doors? (yes/no): ").lower() == "yes"
         win = final_choice(doors, player_door, switching=switch)
 
@@ -22,7 +21,6 @@ def main():
         else:
             print("Sorry, you chose a goat! Better luck next time.")
 
-        # Ask if they want to play again
         play_again = input("Do you want to play again? (yes/no): ")
 
     print("Thanks for playing!")

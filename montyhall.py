@@ -1,14 +1,23 @@
 import random
 
 def initialize_doors():
-    # Randomly assign the prize to a door
     doors = [0, 0, 0]
     prize_door = random.randint(0, 2)
-    doors[prize_door] = 1  # Assign the prize behind one random door
+    doors[prize_door] = 1  
     return doors
 
+def player_choice():
+    while True:  
+        try:
+            choice = int(input("Choose a door (1, 2, or 3): ")) - 1  # Subtract 1 for 0-indexed list
+            if choice in [0, 1, 2]:  
+                return choice
+            else:
+                print("Invalid choice. Please enter 1, 2, or 3.")
+        except ValueError:  
+            print("Invalid input. Please enter a number.")
+
 def reveal_goat(doors, player_door):
-    # Determine which goat door Monty will open
     possible_doors = [i for i in range(3) if i != player_door and doors[i] == 0]
     return random.choice(possible_doors)
 
