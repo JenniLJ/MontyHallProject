@@ -11,7 +11,7 @@ def main():
         # Reveal a goat and ask if the player wants to switch
         # Show result and ask if they want to play again
 
-    print("Thanks for playing!")
+    #print("Thanks for playing!")
 
 if __name__ == "__main__":
-    main()
+    #main()
