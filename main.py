@@ -1,17 +1,29 @@
 from montyhall import initialize_doors, player_choice, reveal_goat, final_choice
 
 def main():
-    # Welcome Message
     print("Welcome to the Monty Hall Problem Simulation!")
 
-    # Run a game loop
     play_again = "yes"
     while play_again.lower() in ["yes", "y"]:
-        # Initialize doors and player choice
-        # Reveal a goat and ask if the player wants to switch
-        # Show result and ask if they want to play again
+        doors = initialize_doors()
+        print("There are 3 doors in front of you: Door 1, Door 2, and Door 3.")
+        player_door = player_choice(doors)
+        goat_door = reveal_goat(doors, player_door)
+        print(f"The host reveals a goat behind Door {goat_door + 1}.")
 
-    #print("Thanks for playing!")
+        # Ask if the player wants to switch
+        switch = input("Do you want to switch doors? (yes/no): ").lower() == "yes"
+        win = final_choice(doors, player_door, switching=switch)
+
+        if win:
+            print("You win! The car was behind your final choice of door!")
+        else:
+            print("Sorry, you chose a goat! Better luck next time.")
+
+        # Ask if they want to play again
+        play_again = input("Do you want to play again? (yes/no): ")
+
+    print("Thanks for playing!")
 
 if __name__ == "__main__":
-    #main()
+    main()
