@@ -1,3 +1,18 @@
+"""
+Program: Montyhallproject
+
+Author: Jennifer Jarrell
+
+Last date modified: 1/1/2024
+
+The Monty Hall Problem is a game where you pick one of three doors to win a prize, 
+usually a car, with the other two hiding goats. After you choose, the host, who knows where the prize is, 
+opens another door revealing a goat. You then decide to stick with your initial choice or switch to the other unopened door.
+Switching doors doubles your chances of winning from 33.33% to 66.66%. 
+This Python project lets you play this game interactively using a graphical interface, 
+making choices and seeing how your odds change, helping you learn about probability of this puzzle.
+"""
+
 import tkinter as tk
 from gui import GameGUI 
 from montyhall import final_choice, initialize_doors, reveal_goat, player_choice
