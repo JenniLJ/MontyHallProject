@@ -17,8 +17,8 @@ class MontyHallGameGUI:
         self.play_button = tk.Button(master, text="Play", command=self.start_game)
         self.result_label = tk.Label(master, text="Results will be displayed here.")
         self.probability_label = tk.Label(master, text="Probability of winning will be shown here.")
-        self.switch_button = tk.Button(master, text="Switch", command=self.switch_doors, state=tk.DISABLED)
-        self.stick_button = tk.Button(master, text="Stick", command=self.stick_with_door, state=tk.DISABLED)
+        self.switch_button = tk.Button(master, text="Switch", command=self.switch_doors)
+        self.stick_button = tk.Button(master, text="Stick", command=self.stick_with_door)
 
         # Packing GUI Components
         self.door_choice_label.pack()
